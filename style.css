@@ -1,8 +1,9 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: black;
   color: white;
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
 
 header {
@@ -105,3 +106,4 @@ footer {
   padding: 20px;
   border-top: 1px solid gold;
 }
+
