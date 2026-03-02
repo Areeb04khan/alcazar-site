@@ -3,8 +3,9 @@ body {
   font-family: 'Poppins', sans-serif;
   color: white;
   background: url('background.jpg') no-repeat center center;
+ background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  min-height: 100vh;
 }
 
 /* HEADER / NAVBAR */
@@ -60,22 +61,6 @@ nav a {
 nav a:hover {
   color: gold;
 }
-
-/* MOBILE ADJUSTMENT */
-@media (max-width: 768px) {
-
-  header {
-    height: 70px;
-    padding: 0 15px;
-  }
-
-  .logo {
-    width: 100px;
-  }
-
-  .logo img {
-    height: 90px;   /* Smaller logo on mobile */
-  }
 
   nav {
     gap: 15px;
@@ -165,4 +150,10 @@ footer {
   padding: 20px;
   border-top: 1px solid gold;
   background: rgba(0,0,0,0.6);
+}
+@media (max-width: 768px) {
+  body {
+    background-size: contain;
+    background-position: top center;
+  }
 }
