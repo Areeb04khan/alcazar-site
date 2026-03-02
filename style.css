@@ -2,74 +2,30 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   color: white;
-  background: url('background.jpg') no-repeat center center;
- background-position: center;
-  background-repeat: no-repeat;
+  background: url('background.jpg') no-repeat center center fixed;
   background-size: cover;
 }
 
-/* HEADER / NAVBAR */
 header {
-  position: relative;          /* Needed for absolute logo */
   display: flex;
   justify-content: space-between;
-  align-items: center;
-
-  height: 80px;                /* Navbar height (70–90 ideal) */
-  padding: 0 20px;
-
-  background: rgba(0, 0, 0, 0.5);   /* Translucent */
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-
-  border-bottom: 1px solid rgba(255, 215, 0, 0.4);
+  padding: 20px;
+  background: black;
+  border-bottom: 1px solid gold;
 }
 
-/* LOGO CONTAINER */
 .logo {
-  position: relative;
-  width: 150px;   /* Reserve horizontal space so nav doesn't shift */
-}
-
-/* FLOATING LOGO IMAGE */
-.logo img {
-  position: absolute;          /* Prevents affecting navbar height */
-  height: 150px;               /* Visual size */
-  width: auto;
-
-  top: 50%;                    /* Vertical centering */
-  left: 0;
-  transform: translateY(-50%);
-
-  object-fit: contain;
-  pointer-events: none;        /* Optional: prevents weird clicks */
-}
-
-/* NAVIGATION */
-nav {
-  display: flex;
-  gap: 25px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 16px;
-}
-
-nav a:hover {
+  font-size: 24px;
+  font-weight: bold;
   color: gold;
 }
 
-  nav {
-    gap: 15px;
-  }
-
-  nav a {
-    font-size: 14px;
-  }
+nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
 }
+
 .hero {
   text-align: center;
   padding: 100px 20px;
@@ -149,11 +105,34 @@ footer {
   text-align: center;
   padding: 20px;
   border-top: 1px solid gold;
-  background: rgba(0,0,0,0.6);
+}
+section {
+  padding: 50px 20px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  margin: 20px;
+  border-radius: 10px;
 }
 @media (max-width: 768px) {
-  body {
-    background-size: contain;
-    background-position: top center;
+
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
