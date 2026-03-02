@@ -10,26 +10,31 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  background: black;
-  border-bottom: 1px solid gold;
+  background:rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid gold;
 }
+
 
 .logo {
   font-size: 24px;
   font-weight: bold;
-  color: gold;
+  max-height:fit-content;
+  max-width: fit-content;
+  border-block: 1px solid gold;
 }
 
 nav a {
   margin: 0 10px;
   color: white;
   text-decoration: none;
+   border-block: 1px solid gold;
+
 }
 
 .hero {
   text-align: center;
   padding: 100px 20px;
-  background: linear-gradient(black, #111);
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .hero h1 {
