@@ -2,16 +2,22 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   color: white;
-  background: url('background.jpg') no-repeat center center fixed;
+  background: url('images/background.jpg') no-repeat center center;
   background-size: cover;
+  min-height: 100vh;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  background: black;
-  border-bottom: 1px solid gold;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.4);
 }
 
 .logo {
@@ -105,34 +111,14 @@ footer {
   text-align: center;
   padding: 20px;
   border-top: 1px solid gold;
+  background: rgba(0,0,0,0.6);
 }
-section {
-  padding: 50px 20px;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.6);
-  margin: 20px;
-  border-radius: 10px;
-}
+
+/* Mobile Background Fix */
 @media (max-width: 768px) {
-
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  nav {
-    margin-top: 10px;
-  }
-
-  .hero h1 {
-    font-size: 28px;
-  }
-
-  .menu-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-grid {
-    grid-template-columns: 1fr 1fr;
+  body {
+    background-position: center top;
+    background-size: cover;
+    background-attachment: scroll;
   }
 }
