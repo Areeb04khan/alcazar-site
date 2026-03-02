@@ -7,31 +7,84 @@ body {
   min-height: 100vh;
 }
 
+/* HEADER / NAVBAR */
 header {
+  position: relative;          /* Needed for absolute logo */
   display: flex;
   justify-content: space-between;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  align-items: center;
+
+  height: 80px;                /* Navbar height (70–90 ideal) */
+  padding: 0 20px;
+
+  background: rgba(0, 0, 0, 0.5);   /* Translucent */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
   border-bottom: 1px solid rgba(255, 215, 0, 0.4);
 }
 
+/* LOGO CONTAINER */
 .logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: gold;
+  position: relative;
+  width: 150px;   /* Reserve horizontal space so nav doesn't shift */
+}
+
+/* FLOATING LOGO IMAGE */
+.logo img {
+  position: absolute;          /* Prevents affecting navbar height */
+  height: 150px;               /* Visual size */
+  width: auto;
+
+  top: 50%;                    /* Vertical centering */
+  left: 0;
+  transform: translateY(-50%);
+
+  object-fit: contain;
+  pointer-events: none;        /* Optional: prevents weird clicks */
+}
+
+/* NAVIGATION */
+nav {
+  display: flex;
+  gap: 25px;
 }
 
 nav a {
-  margin: 0 10px;
   color: white;
   text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
 }
 
+nav a:hover {
+  color: gold;
+}
+
+/* MOBILE ADJUSTMENT */
+@media (max-width: 768px) {
+
+  header {
+    height: 70px;
+    padding: 0 15px;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  .logo img {
+    height: 90px;   /* Smaller logo on mobile */
+  }
+
+  nav {
+    gap: 15px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+}
 .hero {
   text-align: center;
   padding: 100px 20px;
@@ -112,13 +165,4 @@ footer {
   padding: 20px;
   border-top: 1px solid gold;
   background: rgba(0,0,0,0.6);
-}
-
-/* Mobile Background Fix */
-@media (max-width: 768px) {
-  body {
-    background-position: center top;
-    background-size: cover;
-    background-attachment: scroll;
-  }
 }
